@@ -4,6 +4,10 @@ mongoose.connect('mongodb://localhost/greenfield');  // connection defaults to p
 
 const db = mongoose.connection;
 
+//Passport Configuration
+const passportLocalMongoose = require('passport-local-mongoose');
+
+
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => console.log('mongoose db connection open..'));
 
