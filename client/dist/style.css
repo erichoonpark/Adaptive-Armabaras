@@ -13,7 +13,7 @@ body {
   height: 100%;
 }
 
-/* @media (max-width: 1073px) { 
+/* @media (max-width: 1073px) {
     .chart {
       display: none;
     }
@@ -150,7 +150,7 @@ body {
 
 .app-header {
   height: 100vh;
-  width: 100%
+  width: 100%;
   /* align-items: center; */
   grid-column-end: 4;
   grid-column-start: 1;
@@ -377,4 +377,3 @@ a:focus, a:hover, a:visited, a:link, a:active {
 .categoryName {
   text-transform: capitalize;
 }
-

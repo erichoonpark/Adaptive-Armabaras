@@ -42,10 +42,10 @@ class Logged extends React.Component {
     localStorage.clear();
   }
   render() {
-    return (    
+    return (
       <IconMenu
         iconButtonElement={
-          <IconButton> 
+          <IconButton>
             <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 0h24v24H0z" fill="none"/>
               <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
@@ -66,7 +66,7 @@ class Logged extends React.Component {
 Logged.muiName = 'IconMenu';
 
 class AppHeader extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.checkSignedin = this.checkSignedin.bind(this);
@@ -85,33 +85,32 @@ class AppHeader extends React.Component {
       <Ddiv>
         <div className="app-header">
 
+          <div className="nav-right header-el">
+            {this.props.logged ?
+              <Logged clearUserIdFromState={this.props.clearUserIdFromState} />
+              :
+              <Link to="/login"> <Login /> </Link>
+            }
+          </div>
           <div className="nav-center header header-el ml-3">
             <div className="header-text">
-              <h2>  Hump Day  </h2> 
-              
+              <h2>  Hump Day  </h2>
+
             </div>
-          </div>
-          
-          <div className="nav-right header-el"> 
-            {this.props.logged ? 
-              <Logged clearUserIdFromState={this.props.clearUserIdFromState} /> 
-              : 
-              <Link to="/login"> <Login /> </Link> 
-            } 
           </div>
           <Route exact path="/signup" render={()=><Register setUserIdToState={this.props.setUserIdToState} isActive={true}/>}/>
           <Route exact path="/login" render={()=><LoginView setUserIdToState={this.props.setUserIdToState} isActive={true}/>}/>
 
           <button type="button" className="btn btn-info tsk-btn">
-            Add Task 
+            Add Task
           </button>
-          
+
           <Duck className='duck-view' />
 
           <button type="button" className="btn btn-info app-btn" onClick={this.checkSignedin}>
-            Sign Out 
+            Sign Out
           </button>
-          
+
         </div>
       </Ddiv>
     )
@@ -120,5 +119,3 @@ class AppHeader extends React.Component {
 }
 
 export default AppHeader;
-
-
